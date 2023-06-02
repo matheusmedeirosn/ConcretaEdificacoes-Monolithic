@@ -1,0 +1,60 @@
+h1.titulo {
+    font-size: 70px;
+    color: #545454;
+    font-weight: 800;
+}
+
+h2.titulo_secundario {
+    font-size: 30px;
+    margin-top: 2%;
+}
+
+.btn_projetos {
+    text-decoration: none;
+    color: white;
+}
+
+.btn_cadastrar {
+    padding: 9px 45px;
+    background-color: #b7202b;
+    border-color: #b7202b;
+    color: white;
+    font-size: 15px;
+    border-radius: 5px;
+    margin-top: 3%;
+}
+
+.container_titulos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+object{
+    position: absolute;
+}
+
+.father_hero_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
+    gap: 400px;
+}
+
+.container_img {
+    margin-right: 200px;
+}
+
+.container_titulos {
+    margin-left: 100px;
+}
+
+.container_content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 100%;
+}
+
+  

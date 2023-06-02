@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Concreta Edificações</title>
+  <link rel="stylesheet" href="login/codigo.css" />
+  <link
+          rel="icon"
+          type="logoconcreta.png"
+          href="/imagens/logo-icone.png" />
+</head>
+<body>
+<div class="container">
+  <div class="esquerda">
+    <form class="form" action="/telasLogin/novaSenha.html">
+      <h1 class="titulo">Digite o código informado no e-mail:</h1>
+
+      <div style="display: flex">
+        <div class="codigo">
+          <input
+                  type="number"
+                  id="c1"
+                  name="c1"
+                  min="0"
+                  max="9"
+                  required />
+        </div>
+        <div class="codigo">
+          <input
+                  type="number"
+                  id="c2"
+                  name="c2"
+                  min="0"
+                  max="9"
+                  required />
+        </div>
+        <div class="codigo">
+          <input
+                  type="number"
+                  id="c3"
+                  name="c3"
+                  min="0"
+                  max="9"
+                  required />
+        </div>
+        <div class="codigo">
+          <input
+                  type="number"
+                  id="c4"
+                  name="c4"
+                  min="0"
+                  max="9"
+                  required />
+        </div>
+      </div>
+
+      <input
+              class="submitbutton"
+              type="submit"
+              href="/telasLogin/novaSenha.html" value="Continuar">
+      </input>
+    </form>
+  </div>
+  <div class="direita">
+    <div class="logo">
+      <img class="logo" src="/imagens/logo.png" />
+    </div>
+    <!--  <a href="/telasLogin/login.html"><img src="/imagens/exitIcon.png" class="iconeSair" alt=""></a>-->
+  </div>
+</div>
+</body>
+</html>

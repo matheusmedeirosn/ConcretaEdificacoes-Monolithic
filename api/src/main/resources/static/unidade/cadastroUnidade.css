@@ -1,0 +1,22 @@
+.container_main{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10%;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+input, label{
+    border-radius: 0.7rem;
+    border-color: rgb(53, 53, 53);
+}
+h1{
+    width: 80%;
+}
+.container_main{
+    margin-top: 3%;
+}
+.linha{
+    display: flex;
+    gap: 3%;
+    margin-right: -20%;
+}

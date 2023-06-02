@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="logoconcreta.png" href="/imagens/logo-icone.png" />
+  <link rel="stylesheet" href="/reset.css">
+  <link rel="stylesheet" href="/global.css">
+  <link rel="stylesheet" href="configuracao/configuracaoUsuario.css">
+  <link rel="stylesheet" href="/BarraDeNavegacao.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <title>Concreta Edificações</title>
+</head>
+
+<div id="barraDeNavegacao"></div>
+
+<main class="container_main">
+
+  <div class="left_section_container">
+    <h1 class="titulo">
+      Configuração: Usuário
+    </h1>
+    <img id="imagemConcreta" src="/imagens/logo_concreta.png" alt="Logo da concreta" >
+  </div>
+
+  <div>
+    <form action="" class="linha">
+      <div class="coluna-50">
+        <label for="nome_usuario">Nome</label></br>
+        <input type="text" id="nome_usuario" pattern="[A-Za-z\s]+" required="" title="Você deve colocar apenas letras"></br>
+        <label for="matricula_usuario">Matrícula</label></br>
+        <input type="text" id="matricula_usuario" required=""></br>
+        <label for="prfil_vinculado_usuario">Perfil vinculado</label></br>
+        <input type="text" id="prfil_vinculado_usuario"></br>
+      </div>
+      <div class="coluna-50">
+        <label for="email_usuario">Email</label></br>
+        <input type="email" id="email_usuario" required="" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" title="Digite um endereço de e-mail válido no formato exemplo@dominio.com"></br>
+        <label for="telefone_usuario">Telefone</label></br>
+        <input type="tel" id="telefone_usuario" required="" pattern="\(\d{2}\)\d{4,5}-\d{4}" title="Insira um número de telefone válido (ex: (11)1234-5678 ou (11)91234-5678)"></br>
+        <label for="nascimento_usuario">Nascimento</label></br>
+        <input type="date" id="nascimento_usuario" class="input_data" min="1900-01-01" max="2010-12-30" required=""></br>
+        <input type="submit" value="Cadastrar" class="btn_cadastrar">
+      </div>
+    </form>
+  </div>
+
+</main>
+
+<script>
+  $(document).ready(function() {
+    $('#barraDeNavegacao').load('/BarraDeNavegacao.html');
+  });
+</script>
+
+<footer></footer>
+</body>
+</html>

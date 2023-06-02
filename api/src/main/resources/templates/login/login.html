@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Concreta Edificações</title>
+  <link rel="stylesheet" href="login/login.css" />
+  <link rel="icon" type="logoconcreta.png" href="/imagens/logo-icone.png" />
+</head>
+<body>
+<div class="container">
+  <div class="esquerda">
+    <form class="form" action="/home.html">
+      <h1 class="titulo">Acesse sua conta:</h1>
+      <input
+              type="email"
+              class="email"
+              id="email"
+              name="email"
+              placeholder="Digite seu e-mail"
+              required=""
+              pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
+              title="Digite um endereço de e-mail válido no formato exemplo@dominio.com"
+      />
+      <input
+              type="password"
+              class="senha"
+              required=""
+              placeholder="Digite sua senha"
+              pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$"
+              title="Sua senha deve conter: Pelo menos 1 letra, 1 número, 1 letra maiúscula e pelo menos 8 caracteres no total"
+      />
+      <div class="lembrar">
+        <input type="checkbox" id="lembrar" name="lembrar" />
+        <label for="lembrar">Lembrar-me</label>
+      </div>
+      <div class="link">
+        <a href="esqueceuSenha.html">Esqueci a senha</a>
+      </div>
+      <button
+              class="submitbutton"
+              type="submit"
+              href="/home.html"
+      >
+        Entrar
+      </button>
+      <div class="link">
+        <a href="/telasLogin/soliciteConta.html">Crie sua conta</a>
+      </div>
+    </form>
+  </div>
+  <div class="direita">
+    <div class="logo">
+      <img class="logo" src="/imagens/logo.png" />
+    </div>
+    <!--  <a href="/telasLogin/login.html"><img src="/imagens/exitIcon.png" class="iconeSair" alt=""></a>-->
+  </div>
+</div>
+</body>
+</html>

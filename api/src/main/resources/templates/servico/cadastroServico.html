@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="logoconcreta.png" href="/imagens/logo-icone.png" />
+  <link rel="stylesheet" href="/reset.css">
+  <link rel="stylesheet" href="/global.css">
+  <link rel="stylesheet" href="servico/cadastroServiço.css">
+  <link rel="stylesheet" href="/BarraDeNavegacao.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <title>Concreta Edificações</title>
+</head>
+<!-- MENU HAMBURGUER-->
+
+<div id="barraDeNavegacao"></div>
+
+<main class="container_main">
+  <h1 class="titulo">
+    Cadastro de serviço
+    <br>
+    <img id="imagemConcreta" src="/imagens/logo_concreta.png" alt="Logo da concreta" >
+  </h1>
+  <section>
+    <form action="" >
+      <label for="codigoServiço">Código do serviço</label></br>
+      <input type="number" id="codigoServiço" required="" min="0" title="Você precisa colocar um valor maior que 0"></br>
+      <label for="tipoServiço">Tipo de serviço</label></br>
+      <input type="text" id="tipoServiço" required=""></br>
+      <label for="preçoServiço">Preço do serviço</label></br>
+      <input type="number" id="preçoServiço" required="" min="0" title="Você precisa colocar um valor maior que 0"></br>
+      <label for="data_inicial">Data Inicial do serviço</label></br>
+      <input type="date" id="data_inicial" class="input_data" required="" min="2000-01-01" max="2026-12-30"></br>
+      <label for="previsão_entrega">Previsão de término</label></br>
+      <input type="date" id="previsão_entrega" class="input_data" required="" min="2020-01-01" max="2030-12-30" onblur="verificacao()"></br>
+      <label for="descrição">Descrição</label></br>
+      <textarea name="descrição" id="descrição_serviço" cols="48" rows="4"></textarea></br>
+      <input type="submit" value="Cadastrar" class="btn_cadastrar">
+    </form>
+  </section>
+</main>
+
+<script>
+  function verificacao(){
+    var data_inicial = document.querySelector('#data_inicial');
+    var previsão_entrega = document.querySelector('#previsão_entrega');
+
+
+    if(data_inicial.value > previsão_entrega.value){
+      alert("A data inicial não pode ser maior do que a de previsão de entrega!");
+      data_inicial.value = '';
+      previsão_entrega.value = '';
+    }
+  }
+
+  $(document).ready(function() {
+    $('#barraDeNavegacao').load('/BarraDeNavegacao.html');
+  });
+</script>
+
+<footer></footer>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="logoconcreta.png" href="/imagens/logo-icone.png" />
+  <link rel="stylesheet" href="/reset.css">
+  <link rel="stylesheet" href="/global.css">
+  <link rel="stylesheet" href="estrutura/visualizacaoEstrtura.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link rel="stylesheet" href="/BarraDeNavegacao.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <title>Concreta Edificações</title>
+</head>
+<body>
+
+<div id="barraDeNavegacao"></div>
+
+<p class="h1">Visualização de Estrutura</p>
+
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th scope="col">Código da Estrutura</th>
+    <th scope="col">Descrição</th>
+    <th scope="col">Estoque Mínimo</th>
+    <th scope="col">Estoque Atual</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <th scope="row">1001</th>
+    <td>Concreto Armado</td>
+    <td>100</td>
+    <td>342</td>
+  </tr>
+  <tr>
+    <th scope="row">1002</th>
+    <td>Alvenaria estrutural</td>
+    <td>100</td>
+    <td>239</td>
+  </tr>
+  <tr>
+    <th scope="row">1003</th>
+    <td>Estrutura metálica</td>
+    <td>100</td>
+    <td>176</td>
+  </tr>
+  </tbody>
+</table>
+
+<script>
+  $(document).ready(function() {
+    $('#barraDeNavegacao').load('/BarraDeNavegacao.html');
+  });
+</script>
+
+<footer></footer>
+</body>
+</html>

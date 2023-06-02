@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="logoconcreta.png" href="/imagens/logo-icone.png" />
+  <link rel="stylesheet" href="/reset.css">
+  <link rel="stylesheet" href="/global.css">
+  <link rel="stylesheet" href="profissional/visualizacaoProfissional.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link rel="stylesheet" href="/BarraDeNavegacao.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <title>Concreta Edificações</title>
+</head>
+<body>
+
+<div id="barraDeNavegacao"></div>
+
+<p class="h1">Visualização de Profissionais</p>
+
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th scope="col">Matricula</th>
+    <th scope="col">Nome</th>
+    <th scope="col">CPF</th>
+    <th scope="col">Nascimento</th>
+    <th scope="col">Sexo</th>
+    <th scope="col">Função</th>
+    <th scope="col">Titulação</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <th scope="row">1</th>
+    <td>Diego</td>
+    <td>94884188004</td>
+    <td>30/02/1990</td>
+    <td>Masculino</td>
+    <td>Engenheiro Civil</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <th scope="row">2</th>
+    <td>Mariana</td>
+    <td>73723540058</td>
+    <td>15/11/1995</td>
+    <td>Feminino</td>
+    <td>Arquiteta</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <th scope="row">3</th>
+    <td>João</td>
+    <td>42500116077</td>
+    <td>02/07/1989</td>
+    <td>Masculino</td>
+    <td>Pedreiro</td>
+    <td>N/A</td>
+  </tr>
+  </tbody>
+</table>
+
+<script>
+  $(document).ready(function() {
+    $('#barraDeNavegacao').load('/BarraDeNavegacao.html');
+  });
+</script>
+
+<footer></footer>
+</body>
+</html>

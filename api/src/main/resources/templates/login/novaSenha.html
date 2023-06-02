@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Concreta Edificações</title>
+  <link rel="stylesheet" href="login/novaSenha.css">
+  <link rel="icon" type="logoconcreta.png" href="/imagens/logo-icone.png" />
+  <script>
+    function checkSenha() {
+      var senha1 = document.getElementById("senha1").value;
+      var senha2 = document.getElementById("senha2").value;
+
+      if (senha1 != senha2) {
+        alert("As senhas informados não correspondem.");
+        document.getElementById("senha2").value = "";
+      }
+
+    }
+  </script>
+</head>
+<body>
+<div class="container">
+  <div class="esquerda">
+    <form class="form" action="/telasLogin/atenção.html">
+      <h1 class="titulo">Digite uma nova senha</h1>
+      <input type="password" id="senha1" name="senha1" required placeholder="   Digite sua senha" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Sua senha deve conter pelo menos 8 caracteres, incluindo pelo menos uma letra maiúscula, um número e uma letra minúscula">
+      <input type="password" id="senha2" name="senha2" required onblur="checkSenha()" placeholder="   Confirme sua senha">
+      <button class="submitbutton" type="submit" href="/telasLogin/login.html" >Salvar</button>
+    </form>
+
+  </div>
+  <div class="direita">
+    <div class="logo">
+      <img class="logo" src="/imagens/logo.png">
+    </div>
+    <!--  <a href="/telasLogin/login.html"><img src="/imagens/exitIcon.png" class="iconeSair" alt=""></a>-->
+  </div>
+</div>
+</body>
+</html>

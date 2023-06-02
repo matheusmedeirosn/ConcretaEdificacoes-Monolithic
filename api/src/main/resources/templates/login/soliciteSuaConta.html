@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Concreta Edificações</title>
+  <link rel="stylesheet" href="login/soliciteConta.css">
+  <link rel="icon" type="logoconcreta.png" href="/imagens/logo-icone.png" />
+  <script>
+    function checkEmails() {
+      var email1 = document.getElementById("email").value;
+      var email2 = document.getElementById("confirmacao").value;
+
+      if (email1 != email2) {
+        alert("Os e-mails informados não correspondem.");
+        document.getElementById("confirmacao").value = " ";
+      }
+
+    }
+  </script>
+</head>
+<body>
+<div class="container">
+  <div class="esquerda">
+    <form class="form" action="/telasLogin/login.html">
+      <h1 class="titulo">Solicite sua conta:</h1>
+      <input type="email" class="email" id="email" name="email"  placeholder="Digite seu e-mail" required="" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" title="Digite um endereço de e-mail válido no formato exemplo@dominio.com">
+      <input type="email" class="email" id="confirmacao" name="confirmacao" required="" placeholder="Confirme seu e-mail" onblur="checkEmails()">
+      <button class="submitbutton" type="submit" href="/telasLogin/login.html" >Solicitar</button>
+    </form>
+
+  </div>
+  <div class="direita">
+    <div class="logo">
+      <img class="logo" src="/imagens/logo.png">
+    </div>
+    <!--  <a href="/telasLogin/login.html"><img src="/imagens/exitIcon.png" class="iconeSair" alt=""></a>-->
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="logoconcreta.png" href="/imagens/logo-icone.png" />
+  <link rel="stylesheet" href="/reset.css">
+  <link rel="stylesheet" href="/global.css">
+  <link rel="stylesheet" href="equipamento/cadastroEquipamento.css">
+  <link rel="stylesheet" href="/BarraDeNavegacao.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <title>Concreta Edificações</title>
+</head>
+
+<body>
+
+<div id="barraDeNavegacao"></div>
+
+<main class="container_main">
+  <h1 class="titulo">
+    Cadastro de equipamento
+    <br>
+    <img id="imagemConcreta" src="/imagens/logo_concreta.png" alt="Logo da concreta" >
+  </h1>
+
+  <section>
+    <form action="" >
+      <label for="codigoEquipamento">Código do equipamento</label></br>
+      <input type="number" id="codigoEquipamento" required="" min="0" title="Você precisa colocar um valor maior que 0"></br>
+      <label for="tipo_equipamento" >Tipo do equipamento</label></br>
+      <input type="text" id="tipo_equipamento" required=""></br>
+      <label for="unidade_fornecimento">Unidade de fornecimento</label></br>
+      <input type="text" id="unidade_fornecimento" required=""></br>
+      <label for="estoqueAtual">Estoque atual</label></br>
+      <input type="number" id="estoqueAtual" required="" min="0" title="Você precisa colocar um valor maior que 0"></br>
+      <label for="descrição_equipamento">Descrição</label></br>
+      <textarea name="descrição" id="descrição_material" cols="48" rows="4"></textarea></br>
+      <input type="submit" value="Cadastrar" class="btn_cadastrar">
+    </form>
+  </section>
+</main>
+
+<script>
+  $(document).ready(function() {
+    $('#barraDeNavegacao').load('/BarraDeNavegacao.html');
+  });
+</script>
+
+<footer></footer>
+</body>
+</html>

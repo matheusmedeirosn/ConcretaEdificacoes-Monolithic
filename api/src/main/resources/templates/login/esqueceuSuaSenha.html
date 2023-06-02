@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Concreta Edificações</title>
+  <link rel="stylesheet" href="login/esqueceuSuaSenha.css" />
+  <link rel="icon" type="logoconcreta.png" href="/imagens/logo-icone.png" />
+</head>
+<body>
+<div class="container">
+  <div class="esquerda">
+    <form class="form" action="/telasLogin/codigo.html">
+      <h1 class="titulo">Esqueceu sua senha?</h1>
+      <input
+              type="email"
+              class="email"
+              id="email"
+              name="email"
+              placeholder="Digite seu e-mail"
+              required=""
+              pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
+              title="Digite um endereço de e-mail válido no formato exemplo@dominio.com"
+      />
+      <input
+              class="submitbutton"
+              type="submit"
+              href="/telasLogin/codigo.html"
+              value="Continuar"
+      >
+
+      </input>
+    </form>
+  </div>
+  <div class="direita">
+    <div class="logo">
+      <img class="logo" src="/imagens/logo.png" />
+    </div>
+    <!--  <a href="/telasLogin/login.html"><img src="/imagens/exitIcon.png" class="iconeSair" alt=""></a>-->
+  </div>
+</div>
+</body>
+</html>

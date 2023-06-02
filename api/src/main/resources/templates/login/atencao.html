@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Concreta Edificações</title>
+    <link rel="stylesheet" href="login/atencao.css" />
+    <link
+            rel="icon"
+            type="logoconcreta.png"
+            href="/imagens/logo-icone.png" />
+    <script>
+        function checkEmails() {
+            var email1 = document.getElementById("email").value;
+            var email2 = document.getElementById("confirmacao").value;
+
+            if (email1 != email2) {
+                alert("Os e-mails informados não correspondem.");
+                document.getElementById("confirmacao").value = " ";
+            }
+        }
+    </script>
+</head>
+<body>
+<div class="container">
+    <div class="esquerda">
+        <form class="form" action="/telasLogin/login.html">
+            <div class="mensagem">
+                <h1 class="titulo">Atenção</h1>
+                <p class="texto">
+                    Sua conta foi solicitada ao administrador. Aguarde o
+                    mesmo aprovar seu cadastro.
+                </p>
+            </div>
+
+            <button
+                    class="submitbutton"
+                    type="submit"
+                    href="/telasLogin/login.html">
+                Continuar
+            </button>
+        </form>
+    </div>
+    <div class="direita">
+        <div class="logo">
+            <img class="logo" src="/imagens/logo.png" />
+        </div>
+        <!--  <a href="/telasLogin/login.html"><img src="/imagens/exitIcon.png" class="iconeSair" alt=""></a>-->
+    </div>
+</div>
+</body>
+</html>
