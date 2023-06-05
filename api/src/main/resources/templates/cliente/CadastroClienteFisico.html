@@ -23,40 +23,40 @@
     <img id="imagemConcreta" src="/imagens/logo_concreta.png" alt="Logo da concreta">
   </h1>
   <section class="formulario">
-    <form action="" class="linha">
+    <form method="post" action="" class="linha">
       <div class="coluna-50">
         <label for="nome_cliente_fisico">Nome do cliente</label></br>
-        <input type="text" id="nome_cliente_fisico" pattern="[A-Za-z]+" required="" title="Você deve colocar apenas letras"></br>
+        <input name="nome_cliente" type="text" id="nome_cliente_fisico" pattern="[A-Za-z]+" required="" title="Você deve colocar apenas letras"></br>
         <label for="CPF_cliente_fisico">CPF</label></br>
-        <input type="text" id="CPF_cliente_fisico" required="" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" title="Insira um CPF válido (ex: 123.456.789-10)"></br>
+        <input name="cpf_cliente" type="text" id="CPF_cliente_fisico" required="" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" title="Insira um CPF válido (ex: 123.456.789-10)"></br>
 
         <label for="nascimento_cliente_fisico">Nascimento</label></br>
-        <input type="date" id="nascimento_cliente_fisico" class="input_data" min="1900-01-01" max="2010-12-30" required=""></br>
+        <input name="dataNascimento_cliente" type="date" id="nascimento_cliente_fisico" class="input_data" min="1900-01-01" max="2010-12-30" required=""></br>
         <label for="email_cliente_fisico">Email</label></br>
-        <input type="email" id="email_cliente_fisico" required="" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" title="Digite um endereço de e-mail válido no formato exemplo@dominio.com"></br>
+        <input name="email_cliente" type="email" id="email_cliente_fisico" required="" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" title="Digite um endereço de e-mail válido no formato exemplo@dominio.com"></br>
         <label for="telefone_cliente_fisico">Telefone</label></br>
-        <input type="tel" id="telefone_cliente_fisico" required="" pattern="\(\d{2}\)\d{4,5}-\d{4}" title="Insira um número de telefone válido (ex: (11)1234-5678 ou (11)91234-5678)"></br>
+        <input name="telefone_cliente" type="tel" id="telefone_cliente_fisico" required="" pattern="\(\d{2}\)\d{4,5}-\d{4}" title="Insira um número de telefone válido (ex: (11)1234-5678 ou (11)91234-5678)"></br>
         <label for="CEP_clienteFisico">CEP</label></br>
-        <input type="text" id="CEP_clienteFisico" required="" pattern="[0-9]{5}-[0-9]{3}" title="Insira um CEP válido (ex: 12345-678)"></br>
-        <select name="Sexo" class="sexo" required="">
+        <input name="cep_cliente" type="text" id="CEP_clienteFisico" required="" pattern="[0-9]{5}-[0-9]{3}" title="Insira um CEP válido (ex: 12345-678)"></br>
+        <select name="sexo_cliente" class="sexo" required="">
           <option value="valor1" disabled selected>Informe seu sexo</option>
-          <option value="valor2">Masculino</option>
-          <option value="valor3">Feminino</option>
+          <option value="M">Masculino</option>
+          <option value="F">Feminino</option>
         </select>
       </div>
       <div class="coluna-50">
         <label for="estado_clienteFisico">Estado</label></br>
-        <input type="text" id="estado_clienteFisico" required="" pattern="[A-Za-z]+" title="Você deve colocar apenas letras"></br>
+        <input name="estado_cliente" type="text" id="estado_clienteFisico" required="" pattern="[A-Za-z]+" title="Você deve colocar apenas letras"></br>
         <label for="cidade_clienteFisico">Cidade</label></br>
-        <input type="text" id="cidade_clienteFisico" required="" pattern="[A-Za-z]+" title="Você deve colocar apenas letras"></br>
+        <input name="cidade_cliente" type="text" id="cidade_clienteFisico" required="" pattern="[A-Za-z]+" title="Você deve colocar apenas letras"></br>
         <label for="bairro_clienteFisico">Bairro</label></br>
-        <input type="text" id="bairro_clienteFisico" required="" pattern="[A-Za-z]+" title="Você deve colocar apenas letras"></br>
+        <input name="bairro_cliente" type="text" id="bairro_clienteFisico" required="" pattern="[A-Za-z]+" title="Você deve colocar apenas letras"></br>
         <label for="logradouro_clienteFisico">Logradouro</label></br>
-        <input type="text" id="logradouro_clienteFisico" required=""></br>
+        <input name="logradouro_cliente" type="text" id="logradouro_clienteFisico" required=""></br>
         <label for="numero_clienteFisico">Número</label></br>
-        <input type="number" id="numero_clienteFisico" required=""></br>
+        <input name="numero_cliente" type="number" id="numero_clienteFisico" required=""></br>
         <label for="complemento_clienteFisico">Complemento</label></br>
-        <input type="text" id="complemento_clienteFisico"></br>
+        <input name="complemento_cliente" type="text" id="complemento_clienteFisico"></br>
         <input type="submit" value="Cadastrar" class="btn_cadastrar">
       </div>
     </form>

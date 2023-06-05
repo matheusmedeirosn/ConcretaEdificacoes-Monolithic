@@ -1,25 +1,33 @@
 package concreta.edificacoes.api.model.cliente;
 
+import concreta.edificacoes.api.dto.cliente.ClienteFisicoDto;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
+import org.springframework.format.annotation.DateTimeFormat;
 
+import java.time.LocalDate;
 import java.util.Date;
 
-@Table(name= "Cliente_Fisico")
-@Entity(name = "ClienteFisico")
-@Getter
+@Entity(name = "Cliente_Fisico")
+@Getter @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class ClienteFisico {
+@PrimaryKeyJoinColumn(name = "Cod_Cliente")
+public class ClienteFisico extends Cliente{
 
-    private Cliente clientes;
-    private String cpf;
-    @Id @GeneratedValue (strategy = GenerationType.IDENTITY)
-    private Long codigoCliente;
-    private Date dataNascimento;
-    private String sexo;
+    private String cpf_cliente;
+    @Column(name = "Nascimento_Cliente")
+    private LocalDate dataNascimento_cliente;
+    @Column (name = "Sexo_Cliente")
+    private String sexo_cliente;
 
-
+    public ClienteFisico(ClienteFisicoDto clienteFisicoDto) {
+        super(clienteFisicoDto);
+        this.cpf_cliente=clienteFisicoDto.cpf_cliente();
+        this.sexo_cliente=clienteFisicoDto.sexo_cliente();
+        this.dataNascimento_cliente=clienteFisicoDto.dataNascimento_cliente();
+    }
 }

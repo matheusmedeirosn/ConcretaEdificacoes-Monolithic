@@ -4,16 +4,18 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
-@Table(name= "Cliente_Fisico")
-@Entity(name = "ClienteJuridico")
-@Getter
+@Entity(name = "Cliente_Juridico")
+@Getter @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class ClienteJuridico {
+@PrimaryKeyJoinColumn(name = "codigoCliente")
+public class ClienteJuridico extends Cliente{
 
     private String cnpj;
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
+    @JoinColumn(name = "Cod_Cliente")
     private Long codigoCliente;
     private String nomeFantasia;
     private String razaoSocial;
