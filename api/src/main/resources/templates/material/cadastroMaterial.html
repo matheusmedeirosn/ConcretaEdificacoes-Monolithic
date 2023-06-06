@@ -22,19 +22,19 @@
     <img id="imagemConcreta" src="/imagens/logo_concreta.png" alt="Logo da concreta" >
   </h1>
   <section>
-    <form action="" >
+    <form action="" method="post">
       <label for="codigoMaterial">Código do material</label></br>
-      <input type="number" id="codigoMaterial" required="" min="0" title="Você precisa colocar um valor maior que 0"></br>
+      <input name="cod_material" type="number" id="codigoMaterial" required="" min="0" title="Você precisa colocar um valor maior que 0"></br>
       <label for="estoqueMin">Estoque mínimo</label></br>
-      <input type="number" id="estoqueMin" required="" min="0" title="Você precisa colocar um valor maior que 0"></br>
+      <input name="estoque_minimo_material" type="number" id="estoqueMin" required="" min="0" title="Você precisa colocar um valor maior que 0"></br>
       <label for="estoqueAtual">Estoque atual</label></br>
-      <input type="number" id="estoqueAtual" required="" min="0" title="Você precisa colocar um valor maior que 0"></br>
+      <input name="estoque_atual_material" type="number" id="estoqueAtual" required="" min="0" title="Você precisa colocar um valor maior que 0"></br>
       <label for="unidade_medida">Unidade de medida</label></br>
-      <input type="number" id="unidadeMedida" required="" min="0" title="Você precisa colocar um valor maior que 0"></br>
+      <input name="unidade_medida" type="text" id="unidadeMedida" required="" min="0" title="Você precisa colocar um valor maior que 0"></br>
       <label for="unidade_fornecimento">Unidade de fornecimento</label></br>
-      <input type="text" id="unidade_fornecimento" required=""></br>
+      <input name="unidade_fornecimento_material" type="text" id="unidade_fornecimento" required=""></br>
       <label for="descrição_material">Descrição</label></br>
-      <textarea name="descrição" id="descrição_material" cols="48" rows="4"></textarea></br>
+      <textarea name="descricao_material" id="descrição_material" cols="48" rows="4"></textarea></br>
       <input type="submit" value="Cadastrar" class="btn_cadastrar">
     </form>
   </section>

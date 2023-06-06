@@ -1,6 +1,7 @@
 package concreta.edificacoes.api.model.cliente;
 
 import concreta.edificacoes.api.dto.cliente.ClienteFisicoDto;
+import concreta.edificacoes.api.dto.cliente.ClienteJuridicoDto;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotEmpty;
 import lombok.AllArgsConstructor;
@@ -51,5 +52,18 @@ public abstract class Cliente {
         this.logradouro_cliente=clienteFisicoDto.logradouro_cliente();
         this.numero_cliente=clienteFisicoDto.numero_cliente();
         this.telefone_cliente=clienteFisicoDto.telefone_cliente();
+    }
+
+    public Cliente(ClienteJuridicoDto clienteJuridicoDto) {
+        this.nome_cliente=clienteJuridicoDto.nome_cliente();
+        this.email_cliente=clienteJuridicoDto.email_cliente();
+        this.bairro_cliente=clienteJuridicoDto.bairro_cliente();
+        this.cidade_cliente=clienteJuridicoDto.cidade_cliente();
+        this.estado_cliente=clienteJuridicoDto.estado_cliente();
+        this.cep_cliente=clienteJuridicoDto.cep_cliente();
+        this.complemento_cliente=clienteJuridicoDto.complemento_cliente();
+        this.logradouro_cliente=clienteJuridicoDto.logradouro_cliente();
+        this.numero_cliente=clienteJuridicoDto.numero_cliente();
+        this.telefone_cliente=clienteJuridicoDto.telefone_cliente();
     }
 }

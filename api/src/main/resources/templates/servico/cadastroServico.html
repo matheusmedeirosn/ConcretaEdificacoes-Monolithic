@@ -23,19 +23,19 @@
     <img id="imagemConcreta" src="/imagens/logo_concreta.png" alt="Logo da concreta" >
   </h1>
   <section>
-    <form action="" >
+    <form action="" method="post" >
       <label for="codigoServiço">Código do serviço</label></br>
-      <input type="number" id="codigoServiço" required="" min="0" title="Você precisa colocar um valor maior que 0"></br>
+      <input name="cod_servico" type="number" id="codigoServiço" required="" min="0" title="Você precisa colocar um valor maior que 0"></br>
       <label for="tipoServiço">Tipo de serviço</label></br>
-      <input type="text" id="tipoServiço" required=""></br>
-      <label for="preçoServiço">Preço do serviço</label></br>
-      <input type="number" id="preçoServiço" required="" min="0" title="Você precisa colocar um valor maior que 0"></br>
+      <input name="tipo_servico" type="text" id="tipoServiço" required=""></br>
+      <label  for="preçoServiço">Preço do serviço</label></br>
+      <input name="preco_servico" type="number" id="preçoServiço" required="" min="0" title="Você precisa colocar um valor maior que 0"></br>
       <label for="data_inicial">Data Inicial do serviço</label></br>
-      <input type="date" id="data_inicial" class="input_data" required="" min="2000-01-01" max="2026-12-30"></br>
+      <input name="data_inicial_servico" type="date" id="data_inicial" class="input_data" required="" min="2000-01-01" max="2026-12-30"></br>
       <label for="previsão_entrega">Previsão de término</label></br>
-      <input type="date" id="previsão_entrega" class="input_data" required="" min="2020-01-01" max="2030-12-30" onblur="verificacao()"></br>
+      <input name="previsao_termino_servico" type="date" id="previsão_entrega" class="input_data" required="" min="2020-01-01" max="2030-12-30" onblur="verificacao()"></br>
       <label for="descrição">Descrição</label></br>
-      <textarea name="descrição" id="descrição_serviço" cols="48" rows="4"></textarea></br>
+      <textarea name="descricao_servico" id="descrição_serviço" cols="48" rows="4"></textarea></br>
       <input type="submit" value="Cadastrar" class="btn_cadastrar">
     </form>
   </section>

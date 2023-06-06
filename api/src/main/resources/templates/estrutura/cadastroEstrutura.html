@@ -22,15 +22,15 @@
     <img id="imagemConcreta" src="/imagens/logo_concreta.png" alt="Logo da concreta" >
   </h1>
   <section>
-    <form action="" method="">
+    <form action="" method="post">
       <label for="codigoEstrutura">Código de estrutura</label></br>
-      <input type="number" id="codigoEstrutura" required="" min="0" title="Você precisa colocar um valor maior que 0"></br>
+      <input name="cod_estrutura" type="number" id="codigoEstrutura" required="" min="0" title="Você precisa colocar um valor maior que 0"></br>
       <label for="estoqueMin">Estoque mínimo</label></br>
-      <input type="number" id="estoqueMin" required="" min="0" title="Você precisa colocar um valor maior que 0"></br>
+      <input name="estoque_min_estrutura" type="number" id="estoqueMin" required="" min="0" title="Você precisa colocar um valor maior que 0"></br>
       <label for="estoqueAtual">Estoque atual</label></br>
-      <input type="number" id="estoqueAtual" required="" min="0" title="Você precisa colocar um valor maior que 0"></br>
+      <input name="estoque_max_estrutura" type="number" id="estoqueAtual" required="" min="0" title="Você precisa colocar um valor maior que 0"></br>
       <label for="descricao">Descrição</label></br>
-      <textarea name="descrição" id="descrição_estrutura" cols="48" rows="7"></textarea></br>
+      <textarea name="descricao_estrutura" id="descrição_estrutura" cols="48" rows="7"></textarea></br>
       <input type="submit" value="Cadastrar" class="btn_cadastrar" >
     </form>
   </section>

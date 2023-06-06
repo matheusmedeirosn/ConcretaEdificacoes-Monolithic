@@ -40,34 +40,34 @@
     <img id="imagemConcreta" src="/imagens/logo_concreta.png" alt="Logo da concreta" >
   </h1>
   <section>
-    <form action="" class="linha">
+    <form action="" method="post" class="linha">
       <div class="coluna-50">
         <label for="CNPJ_fornecedor">CNPJ do fornecedor</label></br>
-        <input type="text" id="CNPJ_fornecedor" required="" pattern="\d{2}\.\d{3}\.\d{3}/\d{4}-\d{2}" title="Insira um CNPJ válido (ex: 12.345.678/0001-90)"></br>
+        <input name="cnpj_fornecedor" type="text" id="CNPJ_fornecedor" required="" pattern="\d{2}\.\d{3}\.\d{3}/\d{4}-\d{2}" title="Insira um CNPJ válido (ex: 12.345.678/0001-90)"></br>
         <label for="razao_social_fornecedor">Razão social</label></br>
-        <input type="text" id="razao_social_fornecedor" required=""></br>
+        <input name="razao_social" type="text" id="razao_social_fornecedor" required=""></br>
         <label for="nome_fantasia_fornecedor">Nome fantasia</label></br>
-        <input type="text" id="nome_fantasia_fornecedor"></br>
+        <input name="nome_fantasia" type="text" id="nome_fantasia_fornecedor"></br>
         <label for="telefone_fornecedor">Telefone</label></br>
-        <input type="tel" id="telefone_fornecedor" pattern="\(\d{2}\)\d{4,5}-\d{4}" title="Insira um número de telefone válido (ex: (11)1234-5678 ou (11)91234-5678)"></br>
+        <input name="telefone_fornecedor" type="tel" id="telefone_fornecedor" pattern="\(\d{2}\)\d{4,5}-\d{4}" title="Insira um número de telefone válido (ex: (11)1234-5678 ou (11)91234-5678)"></br>
         <label for="cep">CEP</label></br>
-        <input type="text" id="cep" required="" pattern="[0-9]{8}" title="Insira um CEP válido (ex: 12345678)"></br>
+        <input name="cep_fornecedor" type="text" id="cep" required="" pattern="[0-9]{8}" title="Insira um CEP válido (ex: 12345678)"></br>
         <label for="estado">Estado</label></br>
-        <input type="text" id="estado" required="" pattern="[A-Z]{2}" title="Você deve colocar apenas letras"></br>
+        <input name="estado_fornecedor" type="text" id="estado" required="" pattern="[A-Z]{2}" title="Você deve colocar apenas letras"></br>
       </div>
       <div class="coluna-50">
         <label for="cidade">Cidade</label></br>
-        <input type="text" id="cidade" required="" pattern="[A-Za-z\s]+" title="Você deve colocar apenas letras"></br>
+        <input name="cidade_fornecedor" type="text" id="cidade" required="" pattern="[A-Za-z\s]+" title="Você deve colocar apenas letras"></br>
         <label for="bairro">Bairro</label></br>
-        <input type="text" id="bairro" required="" pattern="[A-Za-z\s]+" title="Você deve colocar apenas letras"></br>
+        <input name="bairro_fornecedor" type="text" id="bairro" required="" pattern="[A-Za-z\s]+" title="Você deve colocar apenas letras"></br>
         <label for="logradouro">Logradouro</label></br>
-        <input type="text" id="logradouro" required=""></br>
+        <input name="logradouro_fornecedor" type="text" id="logradouro" required=""></br>
         <label for="numero_fornecedor">Número</label></br>
-        <input type="number" id="numero_fornecedor" required=""></br>
+        <input name="numero_fornecedor" type="number" id="numero_fornecedor" required=""></br>
         <label for="complemento_fornecedor">Complemento</label></br>
-        <input type="text" id="complemento_fornecedor"></br>
+        <input name="complemento_fornecedor" type="text" id="complemento_fornecedor"></br>
         <label for="descrição_fornecedor">Descrição</label></br>
-        <textarea name="descrição" id="descrição_fornecedor" cols="48" rows="2"></textarea></br>
+        <textarea name="descricao_fornecedor" id="descrição_fornecedor" cols="48" rows="2"></textarea></br>
         <input type="submit" value="Cadastrar" class="btn_cadastrar">
       </div>
     </form>

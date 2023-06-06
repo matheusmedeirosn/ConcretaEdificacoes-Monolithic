@@ -25,17 +25,17 @@
   </h1>
 
   <section>
-    <form action="" >
+    <form  method="post" action="" >
       <label for="codigoEquipamento">Código do equipamento</label></br>
-      <input type="number" id="codigoEquipamento" required="" min="0" title="Você precisa colocar um valor maior que 0"></br>
+      <input name="cod_equipamento" type="number" id="codigoEquipamento" required="" min="0" title="Você precisa colocar um valor maior que 0"></br>
       <label for="tipo_equipamento" >Tipo do equipamento</label></br>
-      <input type="text" id="tipo_equipamento" required=""></br>
+      <input name="tipo_equipamento" type="text" id="tipo_equipamento" required=""></br>
       <label for="unidade_fornecimento">Unidade de fornecimento</label></br>
-      <input type="text" id="unidade_fornecimento" required=""></br>
+      <input name="unidade_fornecimento" type="text" id="unidade_fornecimento" required=""></br>
       <label for="estoqueAtual">Estoque atual</label></br>
-      <input type="number" id="estoqueAtual" required="" min="0" title="Você precisa colocar um valor maior que 0"></br>
+      <input name="estoque_atual_equipamento" type="number" id="estoqueAtual" required="" min="0" title="Você precisa colocar um valor maior que 0"></br>
       <label for="descrição_equipamento">Descrição</label></br>
-      <textarea name="descrição" id="descrição_material" cols="48" rows="4"></textarea></br>
+      <textarea name="descricao_equipamento" id="descrição_material" cols="48" rows="4"></textarea></br>
       <input type="submit" value="Cadastrar" class="btn_cadastrar">
     </form>
   </section>

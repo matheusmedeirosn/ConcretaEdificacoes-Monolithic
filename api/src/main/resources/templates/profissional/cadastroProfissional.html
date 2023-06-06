@@ -22,28 +22,28 @@
     <img id="imagemConcreta" src="/imagens/logo_concreta.png" alt="Logo da concreta" >
   </h1>
   <section>
-    <form action="" class="linha">
+    <form action="" method="post" class="linha">
       <div class="coluna-50">
         <label for="nome_profissional">Nome</label></br>
-        <input type="text" id="nome_profissional" pattern="[A-Za-z\s]+" required="" title="Você deve colocar apenas letras"></br>
+        <input name="nome_profissional" type="text" id="nome_profissional" pattern="[A-Za-z\s]+" required="" title="Você deve colocar apenas letras"></br>
         <label for="matricula_profissional">Matricula</label></br>
-        <input type="text" id="matricula_profissional" required=""></br>
+        <input name="matricula_profissional" type="text" id="matricula_profissional" required=""></br>
         <label for="função_profissional">Função</label></br>
-        <input type="text" id="função_profissional" required=""></br>
+        <input name="funcao_profissional" type="text" id="função_profissional" required=""></br>
         <label for="sexo">Sexo</label>
-        <select name="Sexo" class="sexo" required="">
+        <select name="sexo_profissional" class="sexo" required="">
           <option value="valor1" disabled selected>Informe seu sexo</option>
-          <option value="valor2">Masculino</option>
-          <option value="valor3">Feminino</option>
+          <option value="M">Masculino</option>
+          <option value="F">Feminino</option>
         </select>
       </div>
       <div class="coluna-50">
         <label for="titulação_profissional">Titulação</label></br>
-        <input type="text" id="titulação_profissional"></br>
+        <input name="titulacao" type="text" id="titulação_profissional"></br>
         <label for="CPF_profissional">CPF</label></br>
-        <input type="text" id="CPF_profissional" required="" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" title="Insira um CPF válido (ex: 123.456.789-10)"></br>
+        <input name="cpf_profissional" type="text" id="CPF_profissional" required="" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" title="Insira um CPF válido (ex: 123.456.789-10)"></br>
         <label for="nascimento_profissional">Nascimento</label></br>
-        <input type="date" id="nascimento_profissional" class="input_data" min="1900-01-01" max="2010-12-30" require=""></br>
+        <input name="nascimento_profissional" type="date" id="nascimento_profissional" class="input_data" min="1900-01-01" max="2010-12-30" require=""></br>
 
         <input type="submit" value="Cadastrar" class="btn_cadastrar">
       </div>

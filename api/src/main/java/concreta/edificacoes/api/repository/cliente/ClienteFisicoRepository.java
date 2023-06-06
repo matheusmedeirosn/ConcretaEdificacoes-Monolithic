@@ -1,4 +1,4 @@
-package concreta.edificacoes.api.repository;
+package concreta.edificacoes.api.repository.cliente;
 
 import concreta.edificacoes.api.model.cliente.Cliente;
 import org.springframework.data.repository.CrudRepository;
