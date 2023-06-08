@@ -26,10 +26,18 @@
       <div class="coluna-50">
         <label for="nome_profissional">Nome</label></br>
         <input name="nome_profissional" type="text" id="nome_profissional" pattern="[A-Za-z\s]+" required="" title="Você deve colocar apenas letras"></br>
-        <label for="matricula_profissional">Matricula</label></br>
-        <input name="matricula_profissional" type="text" id="matricula_profissional" required=""></br>
-        <label for="função_profissional">Função</label></br>
-        <input name="funcao_profissional" type="text" id="função_profissional" required=""></br>
+<!--        <label for="matricula_profissional">Matricula</label></br>-->
+<!--        <input name="matricula_profissional" type="text" id="matricula_profissional" required=""></br>-->
+<!--        <label for="função_profissional">Função</label></br>-->
+<!--        <input name="funcao_profissional" type="text" id="função_profissional" required=""></br>-->
+        <label for="sexo">Função</label>
+        <select name="funcao_profissional" class="sexo" required="">
+          <option value="valor1" disabled selected>Informe seu sexo</option>
+          <option value="Engenheiro">Engenheiro</option>
+          <option value="Administrativo">Administrativo</option>
+          <option value="Arquiteto">Arquiteto</option>
+        </select>
+        <br><br>
         <label for="sexo">Sexo</label>
         <select name="sexo_profissional" class="sexo" required="">
           <option value="valor1" disabled selected>Informe seu sexo</option>

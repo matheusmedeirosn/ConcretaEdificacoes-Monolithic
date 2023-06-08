@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import java.util.List;
+
 @Controller
 public class ClienteController {
 
@@ -26,34 +28,34 @@ public class ClienteController {
         return "cliente/CadastroCliente";
     }
 
-    @GetMapping("/cadastrarClienteFisico")
+    @GetMapping("/cadastroClienteFisico")
     public String cadastroClienteFisico(){
         return "cliente/CadastroClienteFisico";
     }
 
-    @RequestMapping(value = "/cadastrarClienteFisico", method = RequestMethod.POST)
+    @RequestMapping(value = "/cadastroClienteFisico", method = RequestMethod.POST)
     public String cadastroClienteFisico(ClienteFisicoDto clienteFisicoDto){
 
         var cliente = new ClienteFisico(clienteFisicoDto);
 
         clienteFisicoRepository.save(cliente);
 
-        return "redirect:/cadastrarClienteFisico";
+        return "redirect:/cadastroClienteFisico";
     }
 
-    @GetMapping("/cadastrarClienteJuridico")
-    public String cadastrarClienteJuridico(){
+    @GetMapping("/cadastroClienteJuridico")
+    public String cadastroClienteJuridico(){
         return "cliente/cadastroClienteJuridico";
     }
 
-    @RequestMapping(value = "/cadastrarClienteJuridico", method = RequestMethod.POST)
-    public String cadastrarClienteJuridico(ClienteJuridicoDto clienteJuridicoDto){
+    @RequestMapping(value = "/cadastroClienteJuridico", method = RequestMethod.POST)
+    public String cadastroClienteJuridico(ClienteJuridicoDto clienteJuridicoDto){
 
         var cliente = new ClienteJuridico(clienteJuridicoDto);
 
         clienteJuridicoRepository.save(cliente);
 
-        return "redirect:/cadastrarClienteJuridico";
+        return "redirect:/cadastroClienteJuridico";
     }
 
     @RequestMapping("/visualizarClientes")
@@ -65,11 +67,5 @@ public class ClienteController {
     public String visualizarClienteJuridico(){
         return "cliente/visualizacaoClienteJuridico";
     }
-
-    @RequestMapping("/visualizarClientesFisicos")
-    public String visualizarClienteFisico(){
-        return "cliente/visualizacaoClienteFisico";
-    }
-
 
 }

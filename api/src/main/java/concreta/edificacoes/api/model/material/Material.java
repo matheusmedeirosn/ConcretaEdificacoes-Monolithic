@@ -1,9 +1,7 @@
 package concreta.edificacoes.api.model.material;
 
 import concreta.edificacoes.api.dto.material.MaterialDto;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import jakarta.validation.constraints.NotEmpty;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -18,6 +16,7 @@ import lombok.Setter;
 public class Material {
 
     @Id @Column(name = "Cod_Material")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long cod_material;
 
     @Column(name = "Descricao_Material")
@@ -37,7 +36,6 @@ public class Material {
     private String unidade_fornecimento_material;
 
     public Material (MaterialDto materialDto){
-        this.cod_material=materialDto.cod_material();
         this.estoque_atual_material=materialDto.estoque_atual_material();
         this.descricao_material=materialDto.descricao_material();
         this.unidade_fornecimento_material=materialDto.unidade_fornecimento_material();

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <link rel="stylesheet" href="equipamento/editarcadastroEquipamento.css">  <!-- Cabeçalho da página -->
+</head>
+
+<body>
+<h1>Editar Equipamento</h1>
+
+<form th:action="@{/salvarEquipamento}" method="post">
+  <!-- Campos do formulário preenchidos com os dados do equipamento -->
+  <input type="hidden" name="codEquipamento" th:value="${equipamento.cod_equipamento}" />
+  <label for="descricaoEquipamento">Descrição:</label>
+  <input type="text" id="descricaoEquipamento" name="descricao_equipamento" th:value="${equipamento.descricao_equipamento}" />
+  <label for="descricaoEquipamento">estoque_atual_equipamento:</label>
+  <input type="text" id="estoqueAtualMedicamento" name="estoque_atual_equipamento" th:value="${equipamento.estoque_atual_equipamento}">
+  <label for="descricaoEquipamento">Tipo de equipamento:</label>
+  <input type="text" id="tipo_equipamento" name="tipo_equipamento" th:value="${equipamento.tipo_equipamento}">
+
+  <!-- Resto dos campos do formulário -->
+
+  <button type="submit">Salvar</button>
+</form>
+
+<!-- Rodapé da página -->
+</body>
+</html>

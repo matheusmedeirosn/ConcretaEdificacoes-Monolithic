@@ -58,10 +58,17 @@
   <section>
     <form action="" method="post" class="linha">
       <div class="coluna-50">
-        <label for="cod_projeto" >Código do projeto</label></br>
-        <input name="cod_projeto" type="text" id="cod_projeto" required="" min="0" title="Você precisa colocar um valor maior que 0"></br>
-        <label for="engenheiro_responsavel">Engenheiro responsável</label></br>
-        <input name="engenheiro_responsavel" type="text" id="engenheiro_responsavel" required="" pattern="[A-Za-z\s]+" title="Você deve colocar apenas letras"></br>
+<!--        <label for="cod_projeto" >Código do projeto</label></br>-->
+<!--        <input name="cod_projeto" type="text" id="cod_projeto" required="" min="0" title="Você precisa colocar um valor maior que 0"></br>-->
+<!--        <label for="engenheiro_responsavel">Engenheiro responsável</label></br>-->
+<!--        <input name="engenheiro_responsavel" type="text" id="engenheiro_responsavel" required="" pattern="[A-Za-z\s]+" title="Você deve colocar apenas letras"></br>-->
+
+          <select name="engenheiro_responsavel">
+              <option value="" disabled selected>Engenheiro Responsável:</option>
+              <option th:each="profissional : ${profissionais}" th:value="${profissional.nome_profissional}"
+                      th:text="${profissional.nome_profissional}"></option>
+          </select><br><br><br>
+
         <label for="data_inicial">Data inicial</label></br>
         <input name="data_inicial" type="date" id="data_inicial" class="input_data" required="" min="2000-01-01" max="2025-12-30"></br>
         <label for="previsão_entrega">Previsão de entrega</label></br>
@@ -69,11 +76,9 @@
         <label for="cep">CEP</label></br>
         <input name="cep_projeto" type="text" id="cep" required="" pattern="[0-9]{8}" title="Insira um CEP válido (ex: 12345678)"></br>
         <label for="estado">Estado</label></br>
-        <input name="estado_projeto" type="text" id="estado" required="" pattern="[A-Z]{2}" title="Insira exatamente duas letras MAIÚSCULAS"></br>
+        <input name="estado_projeto" type="text" id="estado" required="" pattern="[A-Z]{2}" title="Insira exatamente duas letras MAIÚSCULAS"></br><label for="cidade">Cidade</label></br><input name="cidade_projeto" type="text" id="cidade" required="" pattern="[A-Za-z\s]+" title="Você deve colocar apenas letras"></br>
       </div>
       <div class="coluna-50">
-        <label for="cidade">Cidade</label></br>
-        <input name="cidade_projeto" type="text" id="cidade" required="" pattern="[A-Za-z\s]+" title="Você deve colocar apenas letras"></br>
         <label for="bairro">Bairro</label></br>
         <input name="bairro_projeto" type="text" id="bairro" required="" pattern="[A-Za-z\s]+" title="Você deve colocar apenas letras"></br>
         <label for="logradouro">Logradouro</label></br>
@@ -83,7 +88,7 @@
         <label for="complemento_projeto">Complemento</label></br>
         <input name="complemento_projeto" type="text" id="complemento_projeto" ></br>
         <label for="descrição_projeto">Descrição</label></br>
-        <textarea name="descricao" id="descrição_projeto" cols="48" rows="2"></textarea></br>
+        <textarea name="descricao" id="descrição_projeto" cols="48" rows="2"></textarea></br><br>
         <input type="submit" value="Cadastrar" class="btn_cadastrar">
       </div>
     </form>

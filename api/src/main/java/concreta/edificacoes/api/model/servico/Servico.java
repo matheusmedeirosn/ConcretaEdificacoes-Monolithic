@@ -1,9 +1,7 @@
 package concreta.edificacoes.api.model.servico;
 
 import concreta.edificacoes.api.dto.servico.ServicoDto;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -19,6 +17,7 @@ import java.time.LocalDate;
 public class Servico {
 
     @Id @Column(name = "Cod_Servico")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long cod_servico;
 
     @Column(name = "Descricao_Servico")
@@ -37,7 +36,6 @@ public class Servico {
     private LocalDate previsao_termino_servico;
 
     public Servico(ServicoDto servicoDto){
-        this.cod_servico=servicoDto.cod_servico();
         this.descricao_servico=servicoDto.descricao_servico();
         this.preco_servico=servicoDto.preco_servico();
         this.tipo_servico=servicoDto.tipo_servico();

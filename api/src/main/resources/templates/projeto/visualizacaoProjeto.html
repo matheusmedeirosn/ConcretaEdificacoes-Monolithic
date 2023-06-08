@@ -41,47 +41,26 @@
   </tr>
   </thead>
   <tbody>
-  <tr>
-    <th scope="row">1</th>
-    <td> </td>
-    <td> </td>
-    <td> </td>
-    <td> </td>
-    <td> </td>
-    <td> </td>
-    <td> </td>
-    <td> </td>
-    <td> </td>
-    <td> </td>
-    <td> </td>
-  </tr>
-  <tr>
-    <th scope="row">2</th>
-    <td> </td>
-    <td> </td>
-    <td> </td>
-    <td> </td>
-    <td> </td>
-    <td> </td>
-    <td> </td>
-    <td> </td>
-    <td> </td>
-    <td> </td>
-    <td> </td>
-  </tr>
-  <tr>
-    <th scope="row">3</th>
-    <td> </td>
-    <td> </td>
-    <td> </td>
-    <td> </td>
-    <td> </td>
-    <td> </td>
-    <td> </td>
-    <td> </td>
-    <td> </td>
-    <td> </td>
-    <td> </td>
+  <!-- Itera pelos projetos e exibe os dados -->
+  <tr th:each="projeto : ${projetos}">
+    <td th:text="${projeto.cod_projeto}"></td>
+    <td th:text="${projeto.descricao}"></td>
+    <td th:text="${projeto.engenheiro_responsavel}"></td>
+    <td th:text="${projeto.data_inicial}"></td>
+    <td th:text="${projeto.previsao_entrega}"></td>
+    <td th:text="${projeto.cep_projeto}"></td>
+    <td th:text="${projeto.logradouro_projeto}"></td>
+    <td th:text="${projeto.numero_projeto}"></td>
+    <td th:text="${projeto.complemento_projeto}"></td>
+    <td th:text="${projeto.bairro_projeto}"></td>
+    <td th:text="${projeto.cidade_projeto}"></td>
+    <td th:text="${projeto.estado_projeto}"></td>
+    <td>
+      <img src="/imagens/editar.png" alt="ícone de edição" style="width: 29px;">
+      <a th:href="@{/excluirProjeto/{codProjeto}(codProjeto=${projeto.cod_projeto.toString()})}">
+        <img src="/imagens/excluir.png" alt="ícone para exclusão" style="width: 29px;">
+      </a>
+    </td>
   </tr>
   </tbody>
 </table>

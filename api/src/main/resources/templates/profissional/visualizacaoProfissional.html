@@ -32,32 +32,21 @@
   </tr>
   </thead>
   <tbody>
-  <tr>
-    <th scope="row">1</th>
-    <td>Diego</td>
-    <td>94884188004</td>
-    <td>30/02/1990</td>
-    <td>Masculino</td>
-    <td>Engenheiro Civil</td>
-    <td>N/A</td>
-  </tr>
-  <tr>
-    <th scope="row">2</th>
-    <td>Mariana</td>
-    <td>73723540058</td>
-    <td>15/11/1995</td>
-    <td>Feminino</td>
-    <td>Arquiteta</td>
-    <td>N/A</td>
-  </tr>
-  <tr>
-    <th scope="row">3</th>
-    <td>João</td>
-    <td>42500116077</td>
-    <td>02/07/1989</td>
-    <td>Masculino</td>
-    <td>Pedreiro</td>
-    <td>N/A</td>
+  <!-- Itera pelos profissionals e exibe os dados -->
+  <tr th:each="profissional : ${profissionais}">
+    <td th:text="${profissional.matricula_profissional}"></td>
+    <td th:text="${profissional.nome_profissional}"></td>
+    <td th:text="${profissional.cpf_profissional}"></td>
+    <td th:text="${profissional.nascimento_profissional}"></td>
+    <td th:text="${profissional.sexo_profissional}"></td>
+    <td th:text="${profissional.funcao_profissional}"></td>
+    <td th:text="${profissional.titulacao}"></td>
+    <td>
+      <img src="/imagens/editar.png" alt="ícone de edição" style="width: 29px;">
+      <a th:href="@{/excluirProfissional/{matriculaProfissional}(matriculaProfissional=${profissional.matricula_profissional.toString()})}">
+        <img src="/imagens/excluir.png" alt="ícone para exclusão" style="width: 29px;">
+      </a>
+    </td>
   </tr>
   </tbody>
 </table>

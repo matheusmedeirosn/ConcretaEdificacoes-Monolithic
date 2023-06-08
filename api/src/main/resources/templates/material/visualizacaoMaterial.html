@@ -31,29 +31,19 @@
   </tr>
   </thead>
   <tbody>
-  <tr>
-    <th scope="row">1</th>
-    <td>Cimento</td>
-    <td>100</td>
-    <td>200</td>
-    <td>Kg</td>
-    <td> </td>
-  </tr>
-  <tr>
-    <th scope="row">2</th>
-    <td>Tijolo</td>
-    <td>500</td>
-    <td>800</td>
-    <td> </td>
-    <td> </td>
-  </tr>
-  <tr>
-    <th scope="row">3</th>
-    <td>Carro de Mão</td>
-    <td>10</td>
-    <td>20</td>
-    <td> </td>
-    <td> </td>
+  <!-- Itera pelos materials e exibe os dados -->
+  <tr th:each="material : ${materiais}">
+    <td th:text="${material.cod_material}"></td>
+    <td th:text="${material.descricao_material}"></td>
+    <td th:text="${material.estoque_minimo_material}"></td>
+    <td th:text="${material.unidade_medida}"></td>
+    <td th:text="${material.unidade_fornecimento_material}"></td>
+    <td>
+      <img src="/imagens/editar.png" alt="ícone de edição" style="width: 29px;">
+      <a th:href="@{/excluirMaterial/{codMaterial}(codMaterial=${material.cod_material.toString()})}">
+        <img src="/imagens/excluir.png" alt="ícone para exclusão" style="width: 29px;">
+      </a>
+    </td>
   </tr>
   </tbody>
 </table>

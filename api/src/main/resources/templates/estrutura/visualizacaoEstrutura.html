@@ -29,23 +29,20 @@
   </tr>
   </thead>
   <tbody>
-  <tr>
-    <th scope="row">1001</th>
-    <td>Concreto Armado</td>
-    <td>100</td>
-    <td>342</td>
-  </tr>
-  <tr>
-    <th scope="row">1002</th>
-    <td>Alvenaria estrutural</td>
-    <td>100</td>
-    <td>239</td>
-  </tr>
-  <tr>
-    <th scope="row">1003</th>
-    <td>Estrutura metálica</td>
-    <td>100</td>
-    <td>176</td>
+  <!-- Itera pelos estruturas e exibe os dados -->
+  <tr th:each="estrutura : ${estruturas}">
+    <td th:text="${estrutura.cod_estrutura}"></td>
+    <td th:text="${estrutura.descricao_estrutura}"></td>
+    <td th:text="${estrutura.estoque_min_estrutura}"></td>
+    <td th:text="${estrutura.estoque_max_estrutura}"></td>
+    <td>
+      <a th:href="@{/editarEstrutura/{codEstrutura}(codEstrutura=${estrutura.cod_estrutura.toString()})}">
+        <img src="/imagens/editar.png" alt="ícone de edição" style="width: 29px;">
+      </a>
+      <a th:href="@{/excluirEstrutura/{codEstrutura}(codEstrutura=${estrutura.cod_estrutura.toString()})}">
+        <img src="/imagens/excluir.png" alt="ícone para exclusão" style="width: 29px;">
+      </a>
+    </td>
   </tr>
   </tbody>
 </table>

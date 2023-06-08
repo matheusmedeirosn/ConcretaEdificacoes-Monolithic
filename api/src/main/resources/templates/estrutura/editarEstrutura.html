@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<!--  <link rel="stylesheet" href="estrutura/editarcadastroEstrutura.css">  &lt;!&ndash; Cabeçalho da página &ndash;&gt;-->
+</head>
+
+<body>
+<h1>Editar Estrutura</h1>
+
+<form th:action="@{/salvarEstrutura}" method="post">
+  <!-- Campos do formulário preenchidos com os dados do estrutura -->
+  <input type="hidden" name="codEstrutura" th:value="${estrutura.cod_estrutura}" />
+  <label for="descricaoEstrutura">Descrição:</label>
+  <input type="text" id="descricaoEstrutura" name="descricao_estrutura" th:value="${estrutura.descricao_estrutura}" />
+  <label for="descricaoEstrutura">Estoque atual:</label>
+  <input type="text" id="estoque_min_estrutura" name="estoque_min_estrutura" th:value="${estrutura.estoque_min_estrutura}">
+  <label for="descricaoEstrutura">Tipo de estrutura:</label>
+  <input type="text" id="estoque_max_estrutura" name="estoque_max_estrutura" th:value="${estrutura.estoque_max_estrutura}">
+
+  <!-- Resto dos campos do formulário -->
+
+  <button type="submit">Salvar</button>
+</form>
+
+<!-- Rodapé da página -->
+</body>
+</html>

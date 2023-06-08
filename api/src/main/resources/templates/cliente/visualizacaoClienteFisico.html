@@ -24,20 +24,20 @@
 
 <table class="table table-striped">
   <thead>
-  <tr>
-    <th scope="col">Nome do Cliente</th>
+  <tr th:each="cliente : ${clientes}">
+    <th th:text="${cliente.nome_cliente}" scope="col">Nome do Cliente</th>
     <th scope="col">CPF</th>
     <th scope="col">Nascimento</th>
-    <th scope="col">Email</th>
-    <th scope="col">Telefone</th>
-    <th scope="col">Sexo</th>
-    <th scope="col">CEP</th>
-    <th scope="col">Estado</th>
-    <th scope="col">Cidade</th>
-    <th scope="col">Bairro</th>
-    <th scope="col">Logradouro</th>
-    <th scope="col">Número</th>
-    <th scope="col">Complemento</th>
+    <th th:text="${cliente.email_cliente}" scope="col">Email</th>
+    <th th:text="${cliente.telefone_cliente}" scope="col">Telefone</th>
+    <th th:text="${cliente.sexo_cliente}"scope="col">Sexo</th>
+    <th th:text="${cliente.cep_cliente} scope="col">CEP</th>
+    <th th:text="${cliente.estado_cliente} scope="col">Estado</th>
+    <th th:text="${cliente.cidade_cliente} scope="col">Cidade</th>
+    <th th:text="${cliente.bairro_cliente} scope="col">Bairro</th>
+    <th th:text="${cliente.logradouro_cliente} scope="col">Logradouro</th>
+    <th th:text="${cliente.numero_cliente}scope="col">Número</th>
+    <th th:text="${cliente.complemento_cliente} scope="col">Complemento</th>
   </tr>
   </thead>
   <tbody>

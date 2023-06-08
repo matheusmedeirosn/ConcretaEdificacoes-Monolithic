@@ -7,7 +7,7 @@
   <link rel="icon" type="logoconcreta.png" href="/imagens/logo-icone.png" />
   <link rel="stylesheet" href="/reset.css">
   <link rel="stylesheet" href="/global.css">
-  <link rel="stylesheet" href="/cadastroUnidade.css">
+  <link rel="stylesheet" href="unidade/cadastroUnidade.css">
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <link rel="stylesheet" href="/BarraDeNavegacao.css">
 
@@ -55,34 +55,44 @@
     <img id="imagemConcreta" src="/imagens/logo_concreta.png" alt="Logo da concreta" >
   </h1>
   <section>
-    <form action="" class="linha">
+    <form action="" method="post" class="linha">
       <div class="coluna-50">
-        <label for="cod_unidade">Código da unidade</label></br>
-        <input type="number" id="cod_unidade" required="" min="0" title="Você precisa colocar um valor maior que 0"></br>
-        <label for="engheiro_responsavel">Engenheiro responsável</label></br>
-        <input type="text" id="engheiro_responsavel" required="" pattern="[A-Za-z\s]+" title="Você deve colocar apenas letras"></br>
-        <label for="data_inicial">Data inicial</label></br>
-        <input type="date" id="data_inicial" class="input_data" required="" min="2000-01-01" max="2026-12-30"></br></br>
-        <label for="previsão_entrega">Previsão de entrega</label></br>
-        <input type="date" id="previsão_entrega" class="input_data" required="" min="2020-01-01" max="2030-12-30" onblur="verificacao()"></br></br>
+        <select name="cod_cliente">
+          <option value="" disabled selected>Informe o cliente</option>
+          <option th:each="cliente : ${clientes}" th:value="${cliente.codigoCliente}"
+                  th:text="${cliente.nome_cliente}"></option>
+        </select><br><br>
+        <select name="cod_projeto">
+          <option value="" disabled selected>Informe o projeto</option>
+          <option th:each="projeto : ${projetos}" th:value="${projeto.cod_projeto}"
+                  th:text="${projeto.descricao}"></option>
+        </select><br><br>
+<!--        <label for="cod_unidade">Código da unidade</label></br>-->
+<!--        <input name="cod_unidade" type="number" id="cod_unidade" required="" min="0" title="Você precisa colocar um valor maior que 0"></br>-->
+<!--        <label for="engheiro_responsavel">Engenheiro responsável</label></br>-->
+<!--        <input name="" type="text" id="engheiro_responsavel" required="" pattern="[A-Za-z\s]+" title="Você deve colocar apenas letras"></br>-->
+<!--        <label for="data_inicial">Data inicial</label></br>-->
+<!--        <input name="" type="date" id="data_inicial" class="input_data" required="" min="2000-01-01" max="2026-12-30"></br></br>-->
+<!--        <label for="previsão_entrega">Previsão de entrega</label></br>-->
+<!--        <input name="" type="date" id="previsão_entrega" class="input_data" required="" min="2020-01-01" max="2030-12-30" onblur="verificacao()"></br></br>-->
         <label for="cep">CEP</label></br>
-        <input type="text" id="cep" required="" pattern="[0-9]{8}" title="Insira um CEP válido (ex: 12345678)"></br>
+        <input name="cep_unidade" type="text" id="cep" required="" pattern="[0-9]{8}" title="Insira um CEP válido (ex: 12345678)"></br>
         <label for="estado">Estado</label></br>
-        <input type="text" id="estado" required="" pattern="[A-Z]{2}" title="Você deve colocar apenas letras"></br>
+        <input name="estado_unidade" type="text" id="estado" required="" pattern="[A-Z]{2}" title="Você deve colocar apenas letras"></br>
+        <label for="cidade">Cidade</label></br>
+        <input name="cidade_unidade" type="text" id="cidade" required="" pattern="[A-Za-z\s]+" title="Você deve colocar apenas letras"></br>
+        <label for="bairro">Bairro</label></br>
+        <input name="bairro_unidade" type="text" id="bairro" required="" pattern="[A-Za-z\s]+" title="Você deve colocar apenas letras"></br>
       </div>
       <div class="coluna-50">
-        <label for="cidade">Cidade</label></br>
-        <input type="text" id="cidade" required="" pattern="[A-Za-z\s]+" title="Você deve colocar apenas letras"></br>
-        <label for="bairro">Bairro</label></br>
-        <input type="text" id="bairro" required="" pattern="[A-Za-z\s]+" title="Você deve colocar apenas letras"></br>
         <label for="logradouro">Logradouro</label></br>
-        <input type="text" id="logradouro" required=""></br>
+        <input name="logradouro_unidade" type="text" id="logradouro" required=""></br>
         <label for="numero_unidade">Número</label></br>
-        <input type="number" id="numero_unidade" required=""></br>
+        <input name="numero_unidade" type="number" id="numero_unidade" required=""></br>
         <label for="complemento_unidade">Complemento</label></br>
-        <input type="text" id="complemento_unidade"></br>
+        <input name="complemento_unidade" type="text" id="complemento_unidade"></br>
         <label for="descrição_unidade">Descrição</label></br>
-        <textarea name="descrição" id="descrição_unidade" cols="48" rows="2"></textarea></br>
+        <textarea name="descricao_unidade" id="descrição_unidade" cols="48" rows="2"></textarea></br><br>
         <input type="submit" value="Cadastrar" class="btn_cadastrar">
       </div>
     </form>

@@ -7,7 +7,7 @@
   <link rel="icon" type="logoconcreta.png" href="/imagens/logo-icone.png" />
   <link rel="stylesheet" href="/reset.css">
   <link rel="stylesheet" href="/global.css">
-  <link rel="stylesheet" href="/visualizacaoUnidade.css">
+  <link rel="stylesheet" href="unidade/visualizacaoUnidade.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
   <link rel="stylesheet" href="/BarraDeNavegacao.css">
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -23,6 +23,7 @@
   <thead>
   <tr>
     <th scope="col">Código da Unidade</th>
+    <th scope="col">Cliente</th>
     <th scope="col">Engenheiro Responsável</th>
     <th scope="col">Descrição</th>
     <th scope="col">Data Inicial</th>
@@ -37,47 +38,26 @@
   </tr>
   </thead>
   <tbody>
-  <tr>
-    <th scope="row">1</th>
-    <td> </td>
-    <td> </td>
-    <td> </td>
-    <td> </td>
-    <td> </td>
-    <td> </td>
-    <td> </td>
-    <td> </td>
-    <td> </td>
-    <td> </td>
-    <td> </td>
-  </tr>
-  <tr>
-    <th scope="row">2</th>
-    <td> </td>
-    <td> </td>
-    <td> </td>
-    <td> </td>
-    <td> </td>
-    <td> </td>
-    <td> </td>
-    <td> </td>
-    <td> </td>
-    <td> </td>
-    <td> </td>
-  </tr>
-  <tr>
-    <th scope="row">3</th>
-    <td> </td>
-    <td> </td>
-    <td> </td>
-    <td> </td>
-    <td> </td>
-    <td> </td>
-    <td> </td>
-    <td> </td>
-    <td> </td>
-    <td> </td>
-    <td> </td>
+  <!-- Itera pelos unidades e exibe os dados -->
+  <tr th:each="unidade : ${unidades}">
+    <td th:text="${unidade.cod_unidade}"></td>
+    <td th:text="${unidade.cod_cliente}"></td>
+    <td th:text="${unidade.cod_projeto}"></td>
+    <td th:text="${unidade.descricao_unidade}"></td>
+    <td th:text="${unidade.cep_unidade}"></td>
+    <td th:text="${unidade.logradouro_unidade}"></td>
+    <td th:text="${unidade.logradouro_unidade}"></td>
+    <td th:text="${unidade.numero_unidade}"></td>
+    <td th:text="${unidade.complemento_unidade}"></td>
+    <td th:text="${unidade.bairro_unidade}"></td>
+    <td th:text="${unidade.cidade_unidade}"></td>
+    <td th:text="${unidade.estado_unidade}"></td>
+    <td>
+      <img src="/imagens/editar.png" alt="ícone de edição" style="width: 29px;">
+      <a th:href="@{/excluirUnidade/{codUnidade}(codUnidade=${unidade.cod_unidade.toString()})}">
+        <img src="/imagens/excluir.png" alt="ícone para exclusão" style="width: 29px;">
+      </a>
+    </td>
   </tr>
   </tbody>
 </table>

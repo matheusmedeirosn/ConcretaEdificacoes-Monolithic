@@ -1,4 +1,6 @@
-
+p{
+    font-family: Arial, Helvetica, sans-serif;
+}
 .navegacao{
     display: flex;
     justify-content: space-around;

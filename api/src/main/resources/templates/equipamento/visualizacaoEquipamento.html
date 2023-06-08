@@ -27,29 +27,25 @@
     <th scope="col">Tipo do Equipamento</th>
     <th scope="col">Unidade de Fornecimento</th>
     <th scope="col">Estoque atual</th>
+    <th scope="col">Ações</th>
   </tr>
   </thead>
   <tbody>
-  <tr>
-    <th scope="row">1</th>
-    <td>Importante</td>
-    <td>Trena</td>
-    <td>TecnoFerramentas</td>
-    <td>540</td>
-  </tr>
-  <tr>
-    <th scope="row">2</th>
-    <td>Extrema Importância</td>
-    <td>Escalímetro</td>
-    <td>Ferramentas Kennedy</td>
-    <td>360</td>
-  </tr>
-  <tr>
-    <th scope="row">3</th>
-    <td>Acompanhar com funcionarios</td>
-    <td>Paquímetro</td>
-    <td>aecweb</td>
-    <td>416</td>
+  <!-- Itera pelos equipamentos e exibe os dados -->
+  <tr th:each="equipamento : ${equipamentos}">
+    <td th:text="${equipamento.cod_equipamento}"></td>
+    <td th:text="${equipamento.descricao_equipamento}"></td>
+    <td th:text="${equipamento.tipo_equipamento}"></td>
+    <td th:text="${equipamento.unidade_fornecimento}"></td>
+    <td th:text="${equipamento.estoque_atual_equipamento}"></td>
+    <td>
+      <a th:href="@{/editarEquipamento/{codEquipamento}(codEquipamento=${equipamento.cod_equipamento.toString()})}">
+        <img src="/imagens/editar.png" alt="ícone de edição" style="width: 29px;">
+      </a>
+      <a th:href="@{/excluirEquipamento/{codEquipamento}(codEquipamento=${equipamento.cod_equipamento.toString()})}">
+        <img src="/imagens/excluir.png" alt="ícone para exclusão" style="width: 29px;">
+      </a>
+    </td>
   </tr>
   </tbody>
 </table>

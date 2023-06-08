@@ -25,13 +25,17 @@
   </h1>
 
   <section>
-    <form  method="post" action="" >
-      <label for="codigoEquipamento">Código do equipamento</label></br>
-      <input name="cod_equipamento" type="number" id="codigoEquipamento" required="" min="0" title="Você precisa colocar um valor maior que 0"></br>
+    <form  method="post" action="" onsubmit="popUp()">
+<!--      <label for="codigoEquipamento">Código do equipamento</label></br>-->
+<!--      <input name="cod_equipamento" type="number" id="codigoEquipamento" required="" min="0" title="Você precisa colocar um valor maior que 0"></br>-->
       <label for="tipo_equipamento" >Tipo do equipamento</label></br>
       <input name="tipo_equipamento" type="text" id="tipo_equipamento" required=""></br>
-      <label for="unidade_fornecimento">Unidade de fornecimento</label></br>
-      <input name="unidade_fornecimento" type="text" id="unidade_fornecimento" required=""></br>
+        <select name="unidade_fornecimento">
+        <option value="valor1" disabled selected>Informe a unidade</option>
+        <!-- Use a tag de repetição para iterar sobre a lista de equipamentos -->
+        <option th:each="unidade : ${unidades}" th:value="${unidade.cod_unidade}"
+                th:text="${unidade.descricao_unidade}"></option>
+    </select><br><br>
       <label for="estoqueAtual">Estoque atual</label></br>
       <input name="estoque_atual_equipamento" type="number" id="estoqueAtual" required="" min="0" title="Você precisa colocar um valor maior que 0"></br>
       <label for="descrição_equipamento">Descrição</label></br>
@@ -48,5 +52,6 @@
 </script>
 
 <footer></footer>
+<script src="/popUp.js"></script>
 </body>
 </html>

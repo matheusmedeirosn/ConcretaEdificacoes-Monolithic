@@ -18,6 +18,7 @@ public class Projeto {
 
     @Id
     @Column(name = "Cod_Projeto")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long cod_projeto;
 
     @Column(name = "Descricao")
@@ -54,7 +55,6 @@ public class Projeto {
     private String estado_projeto;
 
     public Projeto(ProjetoDto projetoDto){
-        this.cod_projeto=projetoDto.cod_projeto();
         this.descricao=projetoDto.descricao();
         this.engenheiro_responsavel=projetoDto.engenheiro_responsavel();
         this.bairro_projeto=projetoDto.bairro_projeto();

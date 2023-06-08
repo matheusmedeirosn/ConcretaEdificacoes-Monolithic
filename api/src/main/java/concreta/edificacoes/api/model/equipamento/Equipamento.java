@@ -9,6 +9,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity(name = "Equipamento")
+@Table(name = "Equipamento")
 @Getter
 @Setter
 @AllArgsConstructor
@@ -16,6 +17,7 @@ import lombok.Setter;
 public class Equipamento {
     @Id
     @Column(name = "Cod_Equipamento")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long cod_equipamento;
     @Column(name = "Descricao_Equipamento")
     private String descricao_equipamento;
@@ -29,11 +31,13 @@ public class Equipamento {
     private String unidade_fornecimento;
 
     public Equipamento(EquipamentoDto equipamentoDto){
-        this.cod_equipamento=equipamentoDto.cod_equipamento();
-        this.descricao_equipamento=equipamentoDto.descricao_equipamento();
-        this.tipo_equipamento=equipamentoDto.tipo_equipamento();
-        this.estoque_atual_equipamento=equipamentoDto.estoque_atual_equipamento();
-        this.unidade_fornecimento=equipamentoDto.unidade_fornecimento();
+        this.descricao_equipamento = equipamentoDto.descricao_equipamento();
+        this.tipo_equipamento = equipamentoDto.tipo_equipamento();
+        this.estoque_atual_equipamento = equipamentoDto.estoque_atual_equipamento();
+        this.unidade_fornecimento = equipamentoDto.unidade_fornecimento();
     }
+
+
+
 
 }

@@ -19,6 +19,7 @@ public class Profissional {
 
     @Id
     @Column(name = "Matricula_Profissional")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long matricula_profissional;
 
     @NotEmpty
@@ -45,7 +46,6 @@ public class Profissional {
     private String titulacao;
 
     public Profissional(ProfissionalDto profissionalDto){
-        this.matricula_profissional=profissionalDto.matricula_profissional();
         this.nome_profissional=profissionalDto.nome_profissional();
         this.cpf_profissional=profissionalDto.cpf_profissional();
         this.funcao_profissional=profissionalDto.funcao_profissional();

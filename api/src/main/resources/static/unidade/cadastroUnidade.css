@@ -12,6 +12,12 @@ input, label{
 h1{
     width: 80%;
 }
+select{
+    width: 99%;
+    height: 2.5rem;
+    font-size: 16px;
+    border-radius: 0.7rem;
+}
 .container_main{
     margin-top: 3%;
 }
