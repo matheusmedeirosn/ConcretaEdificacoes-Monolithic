@@ -7,12 +7,10 @@ import concreta.edificacoes.api.service.ServicoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @Controller
 public class ServicoController {
@@ -58,4 +56,34 @@ public class ServicoController {
         return "redirect:/visualizacaoServico";
     }
 
+    @RequestMapping(value = "/editarServico/{codServico}", method = RequestMethod.GET)
+    public String editarServico(@PathVariable("codServico") Long codServico, Model model) {
+        Optional<Servico> optionalServico = servicoRepository.findById(String.valueOf(codServico));
+
+        if (optionalServico.isPresent()) {
+            Servico servico = optionalServico.get();
+            model.addAttribute("servico", servico);
+            // Redireciona para a página de edição
+            return "servico/editarServico";
+        } else {
+            // Servico não encontrado, redireciona para algum lugar apropriado
+            return "redirect:/visualizacaoServico";
+        }
+    }
+
+    @RequestMapping(value = "/salvarServico", method = RequestMethod.POST)
+    public String salvarServico(@RequestParam("codServico") Long codServico, ServicoDto servicoDto) {
+        Optional<Servico> optionalServico = servicoRepository.findById(String.valueOf(codServico));
+
+        if (optionalServico.isPresent()) {
+            Servico servico = optionalServico.get();
+            servico.setPreco_servico(servicoDto.preco_servico());
+            servico.setPrevisao_termino_servico(servicoDto.previsao_termino_servico());
+
+            servicoRepository.save(servico); // Salva as alterações no banco de dados
+        }
+
+        return "redirect:/visualizacaoServico";
+    }
+    
 }

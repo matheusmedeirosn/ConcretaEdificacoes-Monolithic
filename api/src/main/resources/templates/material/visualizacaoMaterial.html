@@ -28,6 +28,7 @@
     <th scope="col">Estoque Atual</th>
     <th scope="col">Unidade de Medida</th>
     <th scope="col">Unidade de Fornecimento</th>
+    <th> </th>
   </tr>
   </thead>
   <tbody>
@@ -36,10 +37,13 @@
     <td th:text="${material.cod_material}"></td>
     <td th:text="${material.descricao_material}"></td>
     <td th:text="${material.estoque_minimo_material}"></td>
+    <td th:text="${material.estoque_atual_material}"></td>
     <td th:text="${material.unidade_medida}"></td>
     <td th:text="${material.unidade_fornecimento_material}"></td>
     <td>
-      <img src="/imagens/editar.png" alt="ícone de edição" style="width: 29px;">
+      <a th:href="@{/editarMaterial/{codMaterial}(codMaterial=${material.cod_material.toString()})}">
+        <img src="/imagens/editar.png" alt="ícone de edição" style="width: 29px;">
+      </a>
       <a th:href="@{/excluirMaterial/{codMaterial}(codMaterial=${material.cod_material.toString()})}">
         <img src="/imagens/excluir.png" alt="ícone para exclusão" style="width: 29px;">
       </a>

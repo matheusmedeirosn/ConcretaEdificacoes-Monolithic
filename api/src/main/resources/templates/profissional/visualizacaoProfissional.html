@@ -42,7 +42,9 @@
     <td th:text="${profissional.funcao_profissional}"></td>
     <td th:text="${profissional.titulacao}"></td>
     <td>
-      <img src="/imagens/editar.png" alt="ícone de edição" style="width: 29px;">
+      <a th:href="@{/editarProfissional/{matriculaProfissional}(matriculaProfissional=${profissional.matricula_profissional.toString()})}">
+        <img src="/imagens/editar.png" alt="ícone de edição" style="width: 29px;">
+      </a>
       <a th:href="@{/excluirProfissional/{matriculaProfissional}(matriculaProfissional=${profissional.matricula_profissional.toString()})}">
         <img src="/imagens/excluir.png" alt="ícone para exclusão" style="width: 29px;">
       </a>

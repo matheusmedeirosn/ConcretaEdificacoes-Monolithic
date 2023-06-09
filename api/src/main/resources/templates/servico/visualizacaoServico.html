@@ -27,6 +27,8 @@
     <th scope="col">Tipo do Serviço</th>
     <th scope="col">Data inicial</th>
     <th scope="col">Previsão de Término</th>
+    <th scope="col">Preço</th>
+
   </tr>
   </thead>
   <tbody>
@@ -34,12 +36,14 @@
   <tr th:each="servico : ${servicos}">
     <td th:text="${servico.cod_servico}"></td>
     <td th:text="${servico.descricao_servico}"></td>
-    <td th:text="${servico.preco_servico}"></td>
     <td th:text="${servico.tipo_servico}"></td>
     <td th:text="${servico.data_inicial_servico}"></td>
     <td th:text="${servico.previsao_termino_servico}"></td>
+    <td th:text="${servico.preco_servico}"></td>
     <td>
-      <img src="/imagens/editar.png" alt="ícone de edição" style="width: 29px;">
+      <a th:href="@{/editarServico/{codServico}(codServico=${servico.cod_servico.toString()})}">
+        <img src="/imagens/editar.png" alt="ícone de edição" style="width: 29px;">
+      </a>
       <a th:href="@{/excluirServico/{codServico}(codServico=${servico.cod_servico.toString()})}">
         <img src="/imagens/excluir.png" alt="ícone para exclusão" style="width: 29px;">
       </a>

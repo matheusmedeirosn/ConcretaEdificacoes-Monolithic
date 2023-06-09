@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <link rel="stylesheet" href="profissional/editarcadastroProfissional.css">  <!-- Cabeçalho da página -->
+</head>
+
+<body>
+<h1>Editar Profissional</h1>
+
+<form th:action="@{/salvarProfissional}" method="post">
+  <!-- Campos do formulário preenchidos com os dados do profissional -->
+  <input type="hidden" name="matricula_profissional" th:value="${profissional.matricula_profissional}" />
+  <label for="descricaoProfissional">Titulacao:</label>
+  <input type="text" id="titulacao" name="titulacao" th:value="${profissional.titulacao}">
+  <label for="descricaoProfissional">Funcao:</label>
+  <input type="text" id="funcao_profissional" name="funcao_profissional" th:value="${profissional.funcao_profissional}">
+  <!-- Resto dos campos do formulário -->
+
+  <button type="submit">Salvar</button>
+</form>
+
+<!-- Rodapé da página -->
+</body>
+</html>

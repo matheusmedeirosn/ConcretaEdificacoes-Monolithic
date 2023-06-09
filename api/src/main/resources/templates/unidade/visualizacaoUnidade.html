@@ -23,18 +23,16 @@
   <thead>
   <tr>
     <th scope="col">Código da Unidade</th>
-    <th scope="col">Cliente</th>
-    <th scope="col">Engenheiro Responsável</th>
+    <th scope="col">Código do cliente</th>
+    <th scope="col">Código do projeto</th>
     <th scope="col">Descrição</th>
-    <th scope="col">Data Inicial</th>
-    <th scope="col">Previsão de Entrega</th>
     <th scope="col">CEP</th>
     <th scope="col">Estado</th>
     <th scope="col">Cidade</th>
     <th scope="col">Bairro</th>
-    <th scope="col">Logradouro</th>
+    <th scope="col">Logradoduro</th>
     <th scope="col">Número</th>
-    <th scope="col">Complemento</th>
+
   </tr>
   </thead>
   <tbody>
@@ -45,15 +43,15 @@
     <td th:text="${unidade.cod_projeto}"></td>
     <td th:text="${unidade.descricao_unidade}"></td>
     <td th:text="${unidade.cep_unidade}"></td>
-    <td th:text="${unidade.logradouro_unidade}"></td>
+    <td th:text="${unidade.estado_unidade}"></td>
+    <td th:text="${unidade.cidade_unidade}"></td>
+    <td th:text="${unidade.bairro_unidade}"></td>
     <td th:text="${unidade.logradouro_unidade}"></td>
     <td th:text="${unidade.numero_unidade}"></td>
-    <td th:text="${unidade.complemento_unidade}"></td>
-    <td th:text="${unidade.bairro_unidade}"></td>
-    <td th:text="${unidade.cidade_unidade}"></td>
-    <td th:text="${unidade.estado_unidade}"></td>
     <td>
-      <img src="/imagens/editar.png" alt="ícone de edição" style="width: 29px;">
+      <a th:href="@{/editarUnidade/{codUnidade}(codUnidade=${unidade.cod_unidade.toString()})}">
+        <img src="/imagens/editar.png" alt="ícone de edição" style="width: 29px;">
+      </a>
       <a th:href="@{/excluirUnidade/{codUnidade}(codUnidade=${unidade.cod_unidade.toString()})}">
         <img src="/imagens/excluir.png" alt="ícone para exclusão" style="width: 29px;">
       </a>

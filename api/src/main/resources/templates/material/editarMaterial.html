@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <link rel="stylesheet" href="material/editarcadastroMaterial.css">  <!-- Cabeçalho da página -->
+</head>
+
+<body>
+<h1>Editar Material</h1>
+
+<form th:action="@{/salvarMaterial}" method="post">
+  <!-- Campos do formulário preenchidos com os dados do material -->
+  <input type="hidden" name="codMaterial" th:value="${material.cod_material}" />
+  <label for="descricaoMaterial">Descrição:</label>
+  <input type="text" id="descricaoMaterial" name="descricao_material" th:value="${material.descricao_material}" />
+  <label for="descricaoMaterial">estoque_atual_material:</label>
+  <input type="text" id="estoqueAtualMedicamento" name="estoque_atual_material" th:value="${material.estoque_atual_material}">
+  <label for="descricaoMaterial">Estoque minino material:</label>
+  <input type="text" id="estoque_minimo_material" name="estoque_minimo_material" th:value="${material.estoque_minimo_material}">
+  <label for="descricaoMaterial">Unidade Fornecimento:</label>
+  <input type="text" id="unidade_fornecimento_material" name="unidade_fornecimento_material" th:value="${material.unidade_fornecimento_material}">
+  <label for="descricaoMaterial">Unidade de Medida:</label>
+  <input type="text" id="unidade_medida" name="unidade_medida" th:value="${material.unidade_medida}">
+
+  <!-- Resto dos campos do formulário -->
+
+  <button type="submit">Salvar</button>
+</form>
+
+<!-- Rodapé da página -->
+</body>
+</html>

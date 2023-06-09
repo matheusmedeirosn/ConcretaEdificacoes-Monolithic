@@ -1,8 +1,10 @@
 package concreta.edificacoes.api.controller.unidade;
 
 import concreta.edificacoes.api.dto.unidade.UnidadeDto;
+import concreta.edificacoes.api.dto.unidade.UnidadeDto;
 import concreta.edificacoes.api.model.cliente.Cliente;
 import concreta.edificacoes.api.model.projeto.Projeto;
+import concreta.edificacoes.api.model.unidade.Unidade;
 import concreta.edificacoes.api.model.unidade.Unidade;
 import concreta.edificacoes.api.repository.cliente.ClienteFisicoRepository;
 import concreta.edificacoes.api.repository.cliente.ClienteRepository;
@@ -12,12 +14,10 @@ import concreta.edificacoes.api.service.UnidadeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @Controller
 public class UnidadeController {
@@ -78,4 +78,33 @@ public class UnidadeController {
         return "redirect:/visualizacaoUnidade";
     }
 
+    @RequestMapping(value = "/editarUnidade/{codUnidade}", method = RequestMethod.GET)
+    public String editarUnidade(@PathVariable("codUnidade") Long codUnidade, Model model) {
+        Optional<Unidade> optionalUnidade = unidadeRepository.findById(String.valueOf(codUnidade));
+
+        if (optionalUnidade.isPresent()) {
+            Unidade unidade = optionalUnidade.get();
+            model.addAttribute("unidade", unidade);
+            // Redireciona para a página de edição
+            return "unidade/editarUnidade";
+        } else {
+            // Unidade não encontrado, redireciona para algum lugar apropriado
+            return "redirect:/visualizacaoUnidade";
+        }
+    }
+
+    @RequestMapping(value = "/salvarUnidade", method = RequestMethod.POST)
+    public String salvarUnidade(@RequestParam("codUnidade") Long codUnidade, UnidadeDto unidadeDto) {
+        Optional<Unidade> optionalUnidade = unidadeRepository.findById(String.valueOf(codUnidade));
+
+        if (optionalUnidade.isPresent()) {
+            Unidade unidade = optionalUnidade.get();
+            unidade.setDescricao_unidade(unidadeDto.descricao_unidade());
+
+            unidadeRepository.save(unidade); // Salva as alterações no banco de dados
+        }
+
+        return "redirect:/visualizacaoUnidade";
+    }
+    
 }

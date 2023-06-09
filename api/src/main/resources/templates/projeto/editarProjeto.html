@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <link rel="stylesheet" href="projeto/editarcadastroProjeto.css">  <!-- Cabeçalho da página -->
+</head>
+
+<body>
+<h1>Editar Projeto</h1>
+
+<form th:action="@{/salvarProjeto}" method="post">
+    <!-- Campos do formulário preenchidos com os dados do projeto -->
+    <input type="hidden" name="codProjeto" th:value="${projeto.cod_projeto}" />
+    <label for="descricaoProjeto">Engenheiro Responsável:</label>
+    <input type="text" id="engenheiroResponsavel" name="engenheiro_responsavel" th:value="${projeto.engenheiro_responsavel}" />
+    <label for="previsaoEntrega">Previsão Entrega:</label>
+    <input type="date" id="previsaoEntrega" name="previsao_entrega" th:value="${projeto.previsao_entrega}" />
+
+    <!-- Resto dos campos do formulário -->
+
+    <button type="submit">Salvar</button>
+</form>
+
+<!-- Rodapé da página -->
+</body>
+</html>

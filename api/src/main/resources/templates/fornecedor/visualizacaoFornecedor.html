@@ -40,7 +40,9 @@
     <td th:text="${fornecedor.cep_fornecedor}"></td>
     <td th:text="${fornecedor.descricao_fornecedor}"></td>
     <td>
-      <img src="/imagens/editar.png" alt="ícone de edição" style="width: 29px;">
+      <a th:href="@{/editarFornecedor/{cnpjFornecedor}(cnpjFornecedor=${fornecedor.cnpj_fornecedor.toString()})}">
+        <img src="/imagens/editar.png" alt="ícone de edição" style="width: 29px;">
+      </a>
       <a th:href="@{/excluirFornecedor/{cnpjFornecedor}(cnpjFornecedor=${fornecedor.cnpj_fornecedor.toString()})}">
         <img src="/imagens/excluir.png" alt="ícone para exclusão" style="width: 29px;">
       </a>

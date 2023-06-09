@@ -38,50 +38,22 @@
   </tr>
   </thead>
   <tbody>
-  <tr>
-    <td>Kaique Yunes</td>
-    <td>41.172.364/0001-36</td>
-    <td>Perfumaria Neves</td>
-    <td>Neves Carvalho Perfumaria</td>
-    <td>devinnovation02@gmail.com</td>
-    <td>(67) 98384-4792</td>
-    <td>55643-754</td>
-    <td>MA</td>
-    <td>São Luís</td>
-    <td>Mata de Itapera</td>
-    <td>Rua Espírito Santo</td>
-    <td>89</td>
-    <td>apto 404</td>
-  </tr>
-  <tr>
-    <td>Jennifer Moreira</td>
-    <td>35.676.787/0001-90</td>
-    <td>Calçados Santomauro</td>
-    <td>Santomauro Furtado Calçados</td>
-    <td>devinnovation02@gmail.com</td>
-    <td>(47) 98589-3793</td>
-    <td>65092-171</td>
-    <td>PE</td>
-    <td>Gravatá</td>
-    <td>COHAB-ll</td>
-    <td>Rua Jequitibá</td>
-    <td>298</td>
-    <td>apto 301</td>
-  </tr>
-  <tr>
-    <td>José Antônio</td>
-    <td>55.229.276/0001-38</td>
-    <td>Esportes Abreu</td>
-    <td>Abreu Jales Esportes</td>
-    <td>devinnovation02@gmail.com</td>
-    <td>(28) 96725-2892</td>
-    <td>56903-540</td>
-    <td>PE</td>
-    <td>Serra Talhada</td>
-    <td>Nossa Senhora da Penha</td>
-    <td>Rua Joaquim Cardoso Lorena</td>
-    <td>837</td>
-    <td>apto 2208</td>
+  <!-- Itera pelos clientes e exibe os dados -->
+  <tr th:each="cliente : ${clientes}">
+    <td th:text="${cliente.cod_cliente}"></td>
+    <td th:text="${cliente.descricao_cliente}"></td>
+    <td th:text="${cliente.tipo_cliente}"></td>
+    <td th:text="${cliente.data_inicial_cliente}"></td>
+    <td th:text="${cliente.previsao_termino_cliente}"></td>
+    <td th:text="${cliente.preco_cliente}"></td>
+    <td>
+      <a th:href="@{/editarCliente/{codCliente}(codCliente=${cliente.cod_cliente.toString()})}">
+        <img src="/imagens/editar.png" alt="ícone de edição" style="width: 29px;">
+      </a>
+      <a th:href="@{/excluirCliente/{codCliente}(codCliente=${cliente.cod_cliente.toString()})}">
+        <img src="/imagens/excluir.png" alt="ícone para exclusão" style="width: 29px;">
+      </a>
+    </td>
   </tr>
   </tbody>
 </table>

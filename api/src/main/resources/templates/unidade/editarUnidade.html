@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <link rel="stylesheet" href="unidade/editarcadastroUnidade.css">  <!-- Cabeçalho da página -->
+</head>
+
+<body>
+<h1>Editar Unidade</h1>
+
+<form th:action="@{/salvarUnidade}" method="post">
+  <!-- Campos do formulário preenchidos com os dados do unidade -->
+  <input type="hidden" name="codUnidade" th:value="${unidade.cod_unidade}" />
+  <label for="descricaoUnidade">Descrição:</label>
+  <input type="text" id="descricaoUnidade" name="descricao_unidade" th:value="${unidade.descricao_unidade}" />
+
+  <!-- Resto dos campos do formulário -->
+
+  <button type="submit">Salvar</button>
+</form>
+
+<!-- Rodapé da página -->
+</body>
+</html>

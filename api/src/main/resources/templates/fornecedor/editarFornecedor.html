@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <!--  <link rel="stylesheet" href="fornecedor/editarcadastroFornecedor.css">  &lt;!&ndash; Cabeçalho da página &ndash;&gt;-->
+</head>
+
+<body>
+<h1>Editar Fornecedor</h1>
+
+<form th:action="@{/salvarFornecedor}" method="post">
+  <!-- Campos do formulário preenchidos com os dados do fornecedor -->
+  <input type="hidden" name="cnpj_fornecedor" th:value="${fornecedor.cnpj_fornecedor}" />
+  <label for="descricaoFornecedor">Descrição:</label>
+  <input type="text" id="descricaoFornecedor" name="descricao_fornecedor" th:value="${fornecedor.descricao_fornecedor}" />
+  <label for="descricaoFornecedor">Bairro:</label>
+  <input type="text" id="bairro_fornecedor" name="bairro_fornecedor" th:value="${fornecedor.bairro_fornecedor}">
+  <label for="descricaoFornecedor">Cidade:</label>
+  <input type="text" id="cidade_fornecedor" name="cidade_fornecedor" th:value="${fornecedor.cidade_fornecedor}">
+  <label for="descricaoFornecedor">Estado:</label>
+  <input type="text" id="estado_fornecedor" name="estado_fornecedor" th:value="${fornecedor.estado_fornecedor}">
+  <label for="descricaoFornecedor">CEP:</label>
+  <input type="text" id="cep_fornecedor" name="cep_fornecedor" th:value="${fornecedor.cep_fornecedor}">
+  <label for="descricaoFornecedor">Nome Fantasia:</label>
+  <input type="text" id="nome_fantasia" name="nome_fantasia" th:value="${fornecedor.nome_fantasia}">
+  <button type="submit">Salvar</button>
+</form>
+
+<!-- Rodapé da página -->
+</body>
+</html>

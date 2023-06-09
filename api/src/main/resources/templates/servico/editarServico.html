@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <link rel="stylesheet" href="servico/editarcadastroServico.css">  <!-- Cabeçalho da página -->
+</head>
+
+<body>
+<h1>Editar Servico</h1>
+
+<form th:action="@{/salvarServico}" method="post">
+  <!-- Campos do formulário preenchidos com os dados do servico -->
+  <input type="hidden" name="codServico" th:value="${servico.cod_servico}" />
+  <label for="descricaoServico">Preço:</label>
+  <input type="number" id="precosServico" name="preco_servico" th:value="${servico.preco_servico}" />
+  <label for="previsaoEntrega">Previsão Entrega:</label>
+  <input type="date" id="previsaoTerminoServico" name="previsao_termino_servico" th:value="${servico.previsao_termino_servico}" />
+
+  <!-- Resto dos campos do formulário -->
+
+  <button type="submit">Salvar</button>
+</form>
+
+<!-- Rodapé da página -->
+</body>
+</html>
